@@ -18,6 +18,15 @@ my_favorite_songs = [
     ['In This World', 4.02],
 ]
 
+import random
+
+choice = random.sample(my_favorite_songs, k=3)
+total_time = 0
+for song, time in choice:
+    total_time += time
+print(choice)
+print('Три песни звучат', round(total_time, 2), 'минут')
+
 # Пункт B. 
 # Есть словарь песен 
 # Распечатайте общее время звучания трех случайных песен
@@ -34,6 +43,17 @@ my_favorite_songs_dict = {
     'Nowhere to Run': 2.58,
     'In This World': 4.02,
 }
+from random import sample
+from datetime import time
+
+data = list(my_favorite_songs_dict.items())
+choise_lst = sample(data, 3)
+print(choise_lst)
+
+total_time = 0
+for song, time in choise_lst:
+    total_time += time
+print('Три песни звучат', round(total_time, 2), 'минут.')
 
 # Дополнительно для пунктов A и B
 # Пункт C.
