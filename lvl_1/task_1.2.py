@@ -21,11 +21,11 @@ my_favorite_songs = [
 import random
 
 choice = random.sample(my_favorite_songs, k=3)
-total_time = 0
+total_time_1 = 0
 for song, time in choice:
-    total_time += time
-print(choice)
-print('Три песни звучат', round(total_time, 2), 'минут')
+    total_time_1 += time
+print('Три случайных песни из списка:', choice)
+print('Три песни звучат', round(total_time_1, 2), 'минут')
 
 # Пункт B. 
 # Есть словарь песен 
@@ -44,11 +44,11 @@ my_favorite_songs_dict = {
     'In This World': 4.02,
 }
 from random import sample
-from datetime import time
+import datetime
 
 data = list(my_favorite_songs_dict.items())
 choise_lst = sample(data, 3)
-print(choise_lst)
+print('Три случайных песни из словаря:', choise_lst)
 
 total_time = 0
 for song, time in choise_lst:
@@ -64,3 +64,10 @@ print('Три песни звучат', round(total_time, 2), 'минут.')
 # Пункт D.
 # Переведите минуты и секунды в формат времени. Используйте модуль datetime 
 
+a = total_time
+tseconds = int(a*60)
+time_delta = datetime.timedelta(seconds = tseconds)
+start = datetime.datetime(1900,1,1)
+result = start + time_delta
+time_str = result.strftime('%H:%M:%S')
+print('Время звучания:', str(time_str)) 
